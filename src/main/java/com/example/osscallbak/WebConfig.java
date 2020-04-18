@@ -15,7 +15,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         super.addResourceHandlers(registry);
-        registry.addResourceHandler("/file/**").addResourceLocations("file:\\data\\");
+        registry.addResourceHandler("/file/**").addResourceLocations("file:/data/");
 
     }
 
