@@ -14,9 +14,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 public class WebConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+     
+        registry.addResourceHandler("/file/**").addResourceLocations("file:/data/");
         super.addResourceHandlers(registry);
-        registry.addResourceHandler("/file/**").addResourceLocations("file:\\data\\");
-
     }
 
 
