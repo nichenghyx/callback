@@ -1,4 +1,4 @@
-FROM daocloud.io/brave8/maven-jdk8:latest
+FROM daocloud.io/dianwei/maven_base:maven-3.5-jdk-8
 
 ADD pom.xml /tmp/build/
 RUN cd /tmp/build && mvn -q dependency:resolve
