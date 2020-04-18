@@ -59,6 +59,11 @@ public class BimFaceController {
                 inputStreams= new FileInputStream(fi);
                 multipartFile = new MockMultipartFile(fi.getName(), inputStreams);
                 inputStreams = multipartFile.getInputStream();
+            }else if(na.equals("3")){
+                fi = new File("/data/阿里巴巴Java开发手册终极版v1.3.0.rvt");
+                inputStreams= new FileInputStream(fi);
+                multipartFile = new MockMultipartFile(fi.getName(), inputStreams);
+                inputStreams = multipartFile.getInputStream();
             }
             SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             System.out.println("上传开始时间"+ sim.format(new Date()));
