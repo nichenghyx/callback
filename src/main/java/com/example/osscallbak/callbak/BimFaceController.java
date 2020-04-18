@@ -48,7 +48,7 @@ public class BimFaceController {
         MultipartFile multipartFile = null;
 // PUSH方式
 //            InputStream inputStream = file.getInputStream();
-            fi= new File("/data/阿里巴巴Java开发手册终极版v1.3.0.rvt");
+           // fi= new File("/data/阿里巴巴Java开发手册终极版v1.3.0.rvt");
             /*if(na.equals("1")){
                 inputStreams= new FileInputStream(fi);
                 multipartFile = new MockMultipartFile(fi.getName(), inputStreams);
@@ -66,14 +66,16 @@ public class BimFaceController {
             }*/
             SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             System.out.println("上传开始时间"+ sim.format(new Date()));
-        String url = "";
-            if(name.equals("1")){
-                url= "http://localhost:8080/file:E:/"+fi.getName();
-            }else{
-                 url = "http://39.105.63.212\\file\\"+fi.getName();
-            }
+            String url = "http://39.105.63.212/file/阿里巴巴Java开发手册终极版v1.3.0.rvt";
+//             if(name.equals("1")){
+//                 url= "http://localhost:8080/file:E:/"+fi.getName();
+//             }else{
+//                  url = "http://39.105.63.212\\file\\"+fi.getName();
+//             }
 //            FileBean fileBean = bimfaceClient.upload(fi.getName(), fi.length(), inputStreams);
-            FileBean fileBean = bimfaceClient.upload(fi.getName(), ""+fi.getName());
+        
+        
+            FileBean fileBean = bimfaceClient.upload(fi.getName(), url);
             System.out.println("上传结束时间时间"+sim.format(new Date()));
             return fileBean;
 //            FileTranslateBean translate = bimfaceClient.translate(fileBean.getFileId());
